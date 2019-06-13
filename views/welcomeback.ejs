@@ -1,0 +1,15 @@
+<h1>WELCOME BACK <%= userVar.toUpperCase()  %> !</h1>
+<% if(userVar.toLowerCase() === "jay"){ %>
+    <h2>Jay is the best! </h2>
+<% } else { %> 
+<!-- capitalize first letter or userVar --> 
+   <% var arr = []; %>
+   <% for (let i = 0; i < userVar.length; i++) { %>
+      <%  if (userVar[i] !== userVar[0]) { %>
+      <%      arr.push(userVar[i]); %>
+      <%  }%>
+   <%  var joined = arr.join("") %> 
+   <% } %>
+     <p>How's everything <%= userVar[0].toUpperCase() + joined %> </p> 
+    <% } %> 
+    

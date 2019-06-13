@@ -1,0 +1,15 @@
+<h1>Welcome to the posts page</h1> 
+<ul> <h4><u>Posts</u> </h4> 
+<% for(var i = 0; i < posts.length; i++) { %>
+    <li>
+        <%=posts[i].title%> - <strong> <%=posts[i].author%></strong>
+    </li>
+<% } %>
+</ul> 
+<ul> <h4> <u>Clips</u> </h4>
+<% clips.forEach(function(post) { %>
+    <li>
+        <%=post.title%> - <strong> <%=post.author%></strong>
+    </li>
+    <% }); %> 
+    </ul> 

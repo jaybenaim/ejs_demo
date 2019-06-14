@@ -1,13 +1,18 @@
 var express = require('express'); 
 var app = express(); 
 
+// make the css in public folder work 
+app.use(express.static("public")); 
+// let app know the files are .ejs 
+app.set("view engine", "ejs"); 
+
 app.get("/", function(req,res) { 
-    res.render("home.ejs");  
+    res.render("home");  
 }); 
 
 app.get("/welcomeback/:name", function(req,res) { 
     var user = req.params.name;
-    res.render("welcomeback.ejs", { userVar: user});  
+    res.render("welcomeback", { userVar: user});  
 }); 
 
 app.get("/posts", function(req,res) { 
@@ -22,8 +27,9 @@ app.get("/posts", function(req,res) {
         { title: "Clip 3", author: "John"}, 
 
     ]
+    // to see full object in html 
     // var strings = JSON.stringify(posts); 
-    res.render("posts.ejs", {
+    res.render("posts", {
         posts: posts,
          clips:clips
         }); 

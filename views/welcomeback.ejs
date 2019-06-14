@@ -1,3 +1,4 @@
+<% include partials/header %>
 <h1>WELCOME BACK <%= userVar.toUpperCase()  %> !</h1>
 <% if(userVar.toLowerCase() === "jay"){ %>
     <h2>Jay is the best! </h2>
@@ -13,3 +14,4 @@
      <h2>How's everything <%= userVar[0].toUpperCase() + joined %>? </h2> 
     <% } %> 
     
+    <% include partials/footer %>
